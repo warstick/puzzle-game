@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Puzzle from './components/puzzle';
+import PuzzleSlider from './components/puzzleSlider';
 
 function App() {
   return (
     <div className="App">
-      <h2>Welcome to Puzzle Game</h2>
-      <Puzzle />
+      <h2>Welcome to Puzzle Slider Game</h2>
+      <PuzzleSlider />
     </div>
   );
 }

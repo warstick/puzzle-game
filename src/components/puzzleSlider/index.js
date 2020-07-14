@@ -6,7 +6,7 @@ import PuzzleRenderer from './puzzleRenderer';
 
 const { getRandomNumberList } = utils;
 
-const Puzzle = () => {
+const PuzzleSlider = () => {
     const [puzzleSettings, setPuzzleSettings] = useState({rows: 4, cols: 4});
   
     const onNewGameCreation = (puzzleOptions) => {
@@ -24,4 +24,4 @@ const Puzzle = () => {
     );
 };
 
-export default Puzzle;
+export default PuzzleSlider;

@@ -39,6 +39,7 @@ const PuzzleRenderer = ({ items, rows, columns }) => {
         const leftElement = currentItems[rowIndex * columns + (colIndex - 1)];
         const rightElement = currentItems[rowIndex * columns + (colIndex + 1)];
 
+        // swap the empty location with the clicked event based on the elemnt position
         if (topElement === '') {
             [currentItems[(rowIndex - 1) * columns + colIndex], currentItems[rowIndex * columns + colIndex]] = [item, ''];
         }
