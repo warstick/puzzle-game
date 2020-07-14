@@ -1,5 +1,8 @@
+/**
+ * Responsible for Moving number around the grid
+ */
 import React, { useState, useEffect } from 'react';
-import utils from '../../utils';
+import utils from '../../../utils';
 import './puzzleRenderer.css';
 
 const { isListInOrder } = utils;
@@ -9,10 +12,12 @@ const PuzzleRenderer = ({ items, rows, columns }) => {
     let [moves, setMoves] = useState(0);
 
     useEffect(()=> {
-        console.log(items);
+        // when there is complete new game, we need to reset the state of the component
         setCurrentItems([...items]);
+        setMoves(0);
     }, [items]);
 
+    // Divide the items by rows x Columns for arrnaging the data into Grid.
     const getItemsByRowsByColumns = () => {
         const data = [];
         const clonedCurrentItems = [...currentItems];
@@ -23,8 +28,12 @@ const PuzzleRenderer = ({ items, rows, columns }) => {
         return data;
     };
 
+    /**
+     * Click Handler for puzzle number. Based on Params it will move the boxes
+     * @param {Object} param0
+     */
     const onPuzzleNumberClick = ({ item, colIndex, rowIndex }) => {
-        // finding around elements
+        // finding surrounding elements of the clicked element
         const topElement = currentItems[(rowIndex - 1) * columns + colIndex];
         const bottomElement = currentItems[(rowIndex + 1) * columns + colIndex];
         const leftElement = currentItems[rowIndex * columns + (colIndex - 1)];
@@ -46,9 +55,9 @@ const PuzzleRenderer = ({ items, rows, columns }) => {
             [currentItems[rowIndex * columns + (colIndex + 1)], currentItems[rowIndex * columns + colIndex]] = [item, ''];
         }
 
-        // update state only when there is change
+        // update state only when there is a change
         if ([topElement, bottomElement, leftElement, rightElement].indexOf('') >= 0) {
-            setMoves(++moves);
+            setMoves(++moves); // increasing the move
             setCurrentItems([...currentItems]);
         }
     };

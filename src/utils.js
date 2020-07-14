@@ -30,7 +30,7 @@ const shuffleAnArray = (numArray) => {
 };
 
 /**
- * 
+ * Return random NumberList by taking rows and cols
  * @param {number} rows 
  * @param {number} cols 
  *
@@ -46,10 +46,16 @@ const getRandomNumberList = (rows, cols) => {
     return [...shuffleAnArray(randomNumbersArray), ''];
 };
 
+/**
+ * Check whether the list is in Ordered or not.
+ * @param {Array<num | string>} orderedList 
+ * @returns boolean
+ */
 const isListInOrder = (orderedList) => {
     const updatedOrderedList = [...orderedList];
+    // For a sorted list every time you will find the empty string at end of the array
     updatedOrderedList.splice(orderedList.length - 1, 1); // after removing empty space from the array
-    console.log(updatedOrderedList);
+    
     for (let i = 0; i < updatedOrderedList.length - 1; i++) {
         
         if (updatedOrderedList[i] === '' || updatedOrderedList[i] >= updatedOrderedList[i+1]) {

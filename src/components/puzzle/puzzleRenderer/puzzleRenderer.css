@@ -1,6 +1,6 @@
 .puzzle-render-container {
     margin: 5px;
-    background-image: url('../../images/bg.jpg');
+    background-image: url('../../../images/bg.jpg');
     position: relative;
 }
 .puzzle-row {
