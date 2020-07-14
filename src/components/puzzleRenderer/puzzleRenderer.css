@@ -1,0 +1,34 @@
+.puzzle-render-container {
+    margin: 5px;
+    background-image: url('../../images/bg.jpg');
+    position: relative;
+}
+.puzzle-row {
+    display: flex;
+}
+.puzzle-row .puzzle-col {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-family: 'Sacramento', cursive;
+    user-select: none;
+}
+.puzzle-row .puzzle-col.even {
+    background-color: #d4b409;
+}
+.puzzle-row .puzzle-col.odd {
+    background-color: #d41313;
+}
+.puzzle-row .puzzle-col.no-content {
+    background-color: #fff6;
+}
+.success-message {
+    position: absolute;
+    background: rgba(0,0,0, 0.5);
+    color: #fff;
+}
